@@ -13,5 +13,5 @@ class BaseSimulation(abc.ABC):
 
     @classmethod
     @abc.abstractmethod
-    def get_initial_state(self):
+    def get_initial_state(self) -> SharedState:
         pass

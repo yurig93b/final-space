@@ -1,11 +1,10 @@
-import math
+import copy
 
 from data.sharedstate import SharedState
 from pid.pid import PID
 from simulation.base_simulation import BaseSimulation
 from simulation.fts_activated import FtsActivatedException
 from simulation.simulation_ended import SimulationEnded
-import copy
 
 
 class BereshitSimulation(BaseSimulation):
@@ -46,16 +45,14 @@ class BereshitSimulation(BaseSimulation):
 
         self.been_below_terminal_altitude = False
 
-
-
     def has_landed_ok(self, current_state):
         return current_state.hs <= self.ACCEPTABLE_MARGIN_HS and \
-                current_state.hs >= -self.ACCEPTABLE_MARGIN_HS and \
-                current_state.alt < self.ACCEPTABLE_MARGIN_ALT and \
-                current_state.alt > -self.ACCEPTABLE_MARGIN_ALT and \
-                current_state.vs < self.ACCEPTABLE_MARGIN_VS and \
-                current_state.vs > -self.ACCEPTABLE_MARGIN_VS
-    
+               current_state.hs >= -self.ACCEPTABLE_MARGIN_HS and \
+               current_state.alt < self.ACCEPTABLE_MARGIN_ALT and \
+               current_state.alt > -self.ACCEPTABLE_MARGIN_ALT and \
+               current_state.vs < self.ACCEPTABLE_MARGIN_VS and \
+               current_state.vs > -self.ACCEPTABLE_MARGIN_VS
+
     def update_pid_controllers_if_no_hs(self):
         self._current_landing_state = self.STATE_CHAGING_TO_VERTICAL_POSITION
         self.min_ang = self.VERTICAL_LANDING_MIN_ANG
@@ -70,7 +67,7 @@ class BereshitSimulation(BaseSimulation):
 
         if current_state.alt < -2:
             raise FtsActivatedException()
-        
+
         if current_state.hs <= 0 and self._current_landing_state == self.STATE_ENTERING:
             self.update_pid_controllers_if_no_hs()
 
@@ -123,7 +120,7 @@ class BereshitSimulation(BaseSimulation):
         error_wanted_ang = current_state.vehicle_ang - wanted_ang
         pid_error_ang = self.pid_ang.update(error_wanted_ang, dt)
 
-        ret_state :SharedState = copy.deepcopy(current_state)
+        ret_state: SharedState = copy.deepcopy(current_state)
         ret_state.vehicle_ang = PID.constrain(current_state.vehicle_ang - pid_error_ang, self.min_ang, self.max_ang)
         ret_state.wanted_vehicle_ang = wanted_ang
         ret_state.wanted_hs = self.target_hs
@@ -150,4 +147,3 @@ class BereshitSimulation(BaseSimulation):
         s.fuel = 121.0
 
         return s
-
