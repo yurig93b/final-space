@@ -10,7 +10,11 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  console.log('A client is connected!');
+  socket.onAny((eventName, ...args) => {
+    console.log(`Broadcasting ${eventName} with ${JSON.stringify(...args)}`);
+    socket.broadcast.emit(eventName, ...args);
+  });
 });
 
 server.listen(3000, () => {
