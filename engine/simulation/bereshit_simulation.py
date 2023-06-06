@@ -16,7 +16,6 @@ class BereshitSimulation(BaseSimulation):
     TARGET_VS = 25
     MIN_ANG = 58.02236798
     MAX_ANG = 77.47671845
-    FINAL_ALT = 2000.0
     LANDING_TARGET_VS = 20.0
 
     INTEGRAL_VS_PID = 0.2
@@ -78,7 +77,7 @@ class BereshitSimulation(BaseSimulation):
         if self._current_landing_state == self.STATE_VERTICAL_LANDING:
             if self.been_below_terminal_altitude or current_state.alt < self.TERMINAL_LANDING_ALTITUDE:
                 self.been_below_terminal_altitude = True
-                self.target_vs = PID.constrain(current_state.alt * 1 / 10, 0.5, 5)
+                self.target_vs = PID.constrain(current_state.alt * 1 / 20, 0.1, 3)
             else:
                 self.target_vs = self.LANDING_TARGET_VS
 
@@ -137,18 +136,18 @@ class BereshitSimulation(BaseSimulation):
         else:
             ret_state.thrust = (diff_percent_pid_hs + diff_percent_pid_vs) / 2
 
+        ret_state.wanted_thrust = ret_state.thrust
+
         return ret_state
 
     @classmethod
     def get_initial_state(cls) -> SharedState:
         s = SharedState()
-        s.dt = 0
         s.vs = 24.8
         s.hs = 932.0
         s.distance = 181 * 1000.0
         s.alt = 13748.0
         s.fuel = 121.0
-        s.thrust = 0
 
         return s
 
