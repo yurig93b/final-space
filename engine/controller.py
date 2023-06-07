@@ -30,7 +30,7 @@ class FlightController(socketio.ClientNamespace):
         pass
 
     def on_start_simulation(self, data):
-        pass
+        self.run_simulation(data)
 
     def on_new_control_info(self, data):
         self._shared_state.wanted_thrust = float(data.get('wanted_thrust', 0.0))
@@ -143,7 +143,7 @@ class FlightController(socketio.ClientNamespace):
             #
             # plt.xlabel('t')
             # plt.ylabel('alt')
-            plt.show()
+            #plt.show()
 
     def run(self):
         self.run_simulation("manual_control")
