@@ -1,0 +1,17 @@
+.rocket{
+    alt: "rocket";
+    position: relative;
+}
+
+.fire{
+    position: absolute;
+    alt: "fire";
+    bottom: -58px;
+}
+
+.rocket_container{
+    position: absolute;
+    left: 164px;
+    top: 40px;
+  /* transform: rotate(15deg); */
+}
