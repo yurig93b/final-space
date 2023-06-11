@@ -8,7 +8,7 @@ https://github.com/yurig93b/final-space/blob/daniel/engine/README.md
 # The ui README.md:
 https://github.com/yurig93b/final-space/blob/daniel/ui/README.md
 
-# The ui README.md:
+# The websocket README.md:
 https://github.com/yurig93b/final-space/blob/daniel/websocket/README.md
 
 
