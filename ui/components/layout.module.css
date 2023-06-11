@@ -1,0 +1,74 @@
+
+.container{
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-end; */
+}
+
+.rocket_div{
+    position: absolute;
+    z-index: 2;
+}
+
+.moon_div{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    z-index: 1;
+    left: 35%;
+}
+
+.index_title{
+    text-align: center;
+    color: hsl(177, 70%, 41%);
+    text-decoration: underline;
+    text-shadow: 2px 2px 5px rgb(173, 47, 167);
+    font-size: 80px;
+}
+
+.index_sub_title{
+    text-align: center;
+    text-shadow: 2px 2px 5px rgb(187, 78, 255);
+    color: hsl(177, 70%, 41%);
+    font-size: 50px;
+}
+
+.index_page_div{
+    background-image: url("../public/images/backgroud.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.simulation_text{
+    text-shadow: 2px 2px 5px rgb(187, 78, 255);
+    color: hsl(177, 70%, 41%);
+    text-align: center;
+}
+
+.fullcontrol_text{
+    text-shadow: 2px 2px 5px rgb(187, 78, 255);
+    color: hsl(177, 70%, 41%);
+    text-align: center;
+}
+
+.starhoper_text{
+    text-shadow: 2px 2px 5px rgb(187, 78, 255);
+    color: hsl(177, 70%, 41%);
+    text-align: center;
+}
+
+.simulationPage{
+    background-color: black;
+    height: 100vh;
+}
+
+.starhoperPage{
+    background-color: black;
+    height: 100vh;
+}
+
+.manualPage{
+    background-color: black;
+    height: 75vh;
+}

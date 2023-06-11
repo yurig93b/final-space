@@ -1,0 +1,15 @@
+.title {
+    font-size: 30px;
+    text-decoration: underline;
+    color: white;
+}
+
+.container{
+    position:fixed;
+    right: 50px;
+    top: 0px;
+}
+
+.info{
+    color: white;
+}

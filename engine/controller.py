@@ -33,6 +33,9 @@ class FlightController(socketio.ClientNamespace):
         self.run_simulation(data)
 
     def on_new_control_info(self, data):
+        print('**********************************************')
+        print(f'data = {data}')
+        print('**********************************************')
         self._shared_state.wanted_thrust = float(data.get('wanted_thrust', 0.0))
         self._shared_state.wanted_vehicle_ang = float(data.get('wanted_vehicle_ang', 0.0))
 

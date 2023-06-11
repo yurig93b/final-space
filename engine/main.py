@@ -6,7 +6,7 @@ def main():
     sio.register_namespace(c)
     sio.connect("http://localhost:3000")
 
-    c.run()
+    #c.run()
     sio.wait()
 
 if __name__ == "__main__":
