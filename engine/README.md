@@ -8,6 +8,11 @@ The following simulation were implemented:
 
 The moon was implemented as a "celestial body" class with its own paramters for an easy change in the future.
 
+The vehicle was implemneted as a "vehicle" class with its own parameters.
+
+How is the vehicle position calculated and transferred in a simulation?
+We take the current hs and altitude and treat the vehicle in a position of a circle with radius=radius_of_moon+altitude. We then calculcate how many degress of angle are added if we travel in the circumference of the new circle in the speed we currently have. The angle is integrated between steps.
+
 On a good landing (withing thresholds) a "SimulationEnded" exception is raised. If the simulator detects and unrecoverable state it will throw a "FtsActivatedException" meaning we have activated flight termination (boom).
 
 The main flight controller is implemented in the controller.py file.
