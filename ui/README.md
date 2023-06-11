@@ -26,7 +26,7 @@ Also the user can see the current flight status on the right side of the screen:
 ![image](https://github.com/yurig93b/final-space/assets/74859686/bd668952-e5db-49ef-9508-5803d69694e9)
 
 ## Calculations
-1.To show the moon and the rocket for the whole simulation we thought about the next idea:
+1)To show the moon and the rocket for the whole simulation we thought about the next idea:
 
 When the rocket is far away from the moon we will decrease their size, and when the rocket is closer then we increase their size.
 
@@ -40,8 +40,15 @@ And then we bound it to our limits, that means if the rocket is far away the min
 
 And if the rocket is very close to the moon then we set the scale to be 1.
 
+That way we keep the rocket and the moon visible for the whole flight simulation.
 
-The Moon and the Rocket are inside a <div> element with size of 400x400 px.
+The Moon and the Rocket are inside a <div> element with size of 400x400 px, so we change the scale of this div to the calculation's result.
+  
+2) To position the rocket right in the middle of the moon we had to change varius positions.
+  
+For example:
+we seet the moon size to be 200x200px, and we want to position it in the middle so we set the "left" size and "top" size to be 100 and that way we put the moon in the middle of the screen.
+ 
 
 ## How it works
 First the user decide which screen he wants to open.(Simulation, Manual control, Starhoper)
