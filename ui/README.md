@@ -26,7 +26,7 @@ Also the user can see the current flight status on the right side of the screen:
 ![image](https://github.com/yurig93b/final-space/assets/74859686/bd668952-e5db-49ef-9508-5803d69694e9)
 
 ## Calculations
-1)To show the moon and the rocket for the whole simulation we thought about the next idea:
+1) To show the moon and the rocket for the whole simulation we thought about the next idea:
 
 When the rocket is far away from the moon we will decrease their size, and when the rocket is closer then we increase their size.
 
@@ -46,8 +46,22 @@ The Moon and the Rocket are inside a <div> element with size of 400x400 px, so w
   
 2) To position the rocket right in the middle of the moon we had to change varius positions.
   
-For example:
-we seet the moon size to be 200x200px, and we want to position it in the middle so we set the "left" size and "top" size to be 100 and that way we put the moon in the middle of the screen.
+We set the moon values to be:
+```bash
+height = 200px
+width = 200px
+left = 100px
+bottom = 100px
+```
+That way we put the Moon in the middle of the div that mentioned above.
+  
+The rocket is a little bit more complicated, we want it to be right on the moon, so we set it's values to be:
+```bash
+left = 164px
+bottom = 40px
+```
+This values takes into account the size of the rocket (including the fire effect).
+
  
 
 ## How it works
