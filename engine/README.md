@@ -6,6 +6,8 @@ The following simulation were implemented:
 2. Bereshit simulation - with 3 PID controller (ang, hs and vs). 
 3. Manual simulation - to control the simulation with input from the UI.
 
+The moon was implemented as a "celestial body" class with its own paramters for an easy change in the future.
+
 On a good landing (withing thresholds) a "SimulationEnded" exception is raised. If the simulator detects and unrecoverable state it will throw a "FtsActivatedException" meaning we have activated flight termination (boom).
 
 The main flight controller is implemented in the controller.py file.
