@@ -25,6 +25,8 @@ Also the user can see the current flight status on the right side of the screen:
 
 ![image](https://github.com/yurig93b/final-space/assets/74859686/bd668952-e5db-49ef-9508-5803d69694e9)
 
+The fire opacity is changed according to the current thrust of the rocket.
+
 ## Calculations
 1)To show the moon and the rocket for the whole simulation we thought about the next idea:
 
@@ -36,7 +38,7 @@ To do this we used the next logic:
 
 We set the scale (value between 0 to 1) to be 1 divide by the (rocket.altitude/1000)
 
-And then we bound it to our limits, that means if the rocket is far away the minimum scale will be 0.1.
+And then we bound it to our limits, that means if the rocket is far away the scale will be 0.1.
 
 And if the rocket is very close to the moon then we set the scale to be 1.
 
@@ -79,6 +81,23 @@ Then the backend send data that contains the flight status 10 times per second t
 
 Each page process the data and transfer the right data to the right component, and each component will be updataed and shown on the screen.
 
-To make it more understandable we will explain each page:
-
-
+  
+  ## Pages
+  1. Simulation page
+  
+  In this page we simulate a successful landing on the moon.
+  The user can see the flight_status on the right with most of the details.
+  ![image](https://github.com/yurig93b/final-space/assets/74859686/0c83bac9-b19e-4ecf-a4e0-960f4e200402)
+  
+  2. Manual control page
+  
+  Here the user can control the angle and the thrust of the rocket.
+  
+  The frontend send message with the wanted values (10 times per second) to the backend and the backend updates the values as requested.
+  
+  ![image](https://github.com/yurig93b/final-space/assets/74859686/d4593596-164b-4a1a-bdbf-de7857d25856)
+  
+  3. Starhoper page
+  
+  In this page the rocket launched from the moon and land in other location on the moon.
+  
