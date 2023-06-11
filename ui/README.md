@@ -26,7 +26,7 @@ Also the user can see the current flight status on the right side of the screen:
 ![image](https://github.com/yurig93b/final-space/assets/74859686/bd668952-e5db-49ef-9508-5803d69694e9)
 
 ## Calculations
-1) To show the moon and the rocket for the whole simulation we thought about the next idea:
+1)To show the moon and the rocket for the whole simulation we thought about the next idea:
 
 When the rocket is far away from the moon we will decrease their size, and when the rocket is closer then we increase their size.
 
@@ -44,7 +44,7 @@ That way we keep the rocket and the moon visible for the whole flight simulation
 
 The Moon and the Rocket are inside a <div> element with size of 400x400 px, so we change the scale of this div to the calculation's result.
   
-2) To position the rocket right in the middle of the moon we had to change varius positions.
+2)To position the rocket right in the middle of the moon we had to change varius positions.
   
 We set the moon values to be:
 ```bash
@@ -61,8 +61,14 @@ left = 164px
 bottom = 40px
 ```
 This values takes into account the size of the rocket (including the fire effect).
-
- 
+  
+3)To position the rocket in the right place (x-axis) we had to do the next calculation:
+```bash
+  const ans = Math.cos(ang)*(alt/1000)+radius+64;
+```
+The rocket and the moon defines a circle (the distance between the rocket to the moon is the radius).
+  
+We multiply the angle (of the position we want to place the rocket on) with the distance of the rocket from the moon (divided by 1000) and adding the radius (because it's a circle) and adding 64 which is the height size of the upper part of the rocket. 
 
 ## How it works
 First the user decide which screen he wants to open.(Simulation, Manual control, Starhoper)
