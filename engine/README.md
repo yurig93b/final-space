@@ -8,4 +8,5 @@ The following simulation were implemented:
 
 The main flight controller is implemented in the controller.py file.
 
+Disregard landing.py as it is the original file we were based on before reconstructing everything.
 To run please install requierments.txt and run main.py (after running the WS server).
