@@ -101,3 +101,6 @@ Each page process the data and transfer the right data to the right component, a
   
   In this page the rocket launched from the moon and land in other location on the moon.
   
+  ![image](https://github.com/yurig93b/final-space/assets/74859686/29300fba-4815-41c8-8728-05621fd4bf19)
+
+  
